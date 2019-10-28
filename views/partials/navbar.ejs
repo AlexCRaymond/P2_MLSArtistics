@@ -1,0 +1,38 @@
+<link rel="stylesheet" href="/css/style.css">
+
+<div class="nav">
+ <div class="nav-header">
+  <div class="nav-left">
+      <a href="/" class="nav-link">Home</a>
+</div>
+<div class="nav-center"></div>
+    <div class="nav-right">
+    <a href="/authors" class="nav-link">About</a>
+    <a href="/articles" class="nav-link">Shop</a>
+    <a href="" class="nav-link">Art Cart</a>
+    <a href="" class="nav-link">Login/Register</a>
+    <div class="hamburger-menu">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </div>
+  </div>
+ </div>
+ <div class="overlay">
+     <div class="overlay-content">
+         <a href="#" class="overlay-link">One</a>
+         <a href="#" class="overlay-link">Two</a>
+         <a href="#" class="overlay-link">Three</a>
+         <a href="#" class="overlay-link">Four</a>
+     </div>
+ </div>
+</div>
+<script>
+    const hamburgerMenu = document.querySelector('.hamburger-menu')
+    const overlay = document.querySelector('.overlay')
+    hamburgerMenu.addEventListener('click', (e) => {
+        e.currentTarget.classList.toggle('open')
+        overlay.classList.toggle('show')
+    })
+</script>
+  
