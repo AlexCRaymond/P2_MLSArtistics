@@ -19,6 +19,14 @@ app.get('/', (req, res) => {
     res.render('home.ejs')
 });
 
+app.get('/login', (req, res) => {
+    res.render('users/login.ejs')
+});
+
+app.get('/register', (req, res) => {
+    res.render('users/register.ejs')
+});
+
 app.listen(3000, () => {
     console.log('listening');
 });
