@@ -42,7 +42,11 @@
 
     shopLink.addEventListener('click', function() {
         console.log('hit')
-        window.scrollTo(0, 1000)
-    })
+        window.scrollTo({
+        top: 235, 
+        bottom: 0,
+        behavior: 'smooth',
+        })
+    });
 </script>
   
