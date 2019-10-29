@@ -7,9 +7,9 @@
 </div>
 <div class="nav-center"></div>
     <div class="nav-right">
-    <a href="/" class="nav-link">About</a>
-    <a href="/" class="nav-link">Shop</a>
-    <a href="/" class="nav-link">Art Cart</a>
+    <p class="nav-link" id="about">About</p>
+    <p class="nav-link" id="shopLink">Shop</p>
+    <p class="nav-link">Art Cart</p>
     <% if(username) { %> 
         Hello <%= username %>
     <% } else {  %> 
@@ -33,10 +33,16 @@
 </div>
 <script>
     const hamburgerMenu = document.querySelector('.hamburger-menu')
+    const shopLink = document.querySelector('#shopLink');
     const overlay = document.querySelector('.overlay')
     hamburgerMenu.addEventListener('click', (e) => {
         e.currentTarget.classList.toggle('open')
         overlay.classList.toggle('show')
+    })
+
+    shopLink.addEventListener('click', function() {
+        console.log('hit')
+        window.scrollTo(0, 1000)
     })
 </script>
   

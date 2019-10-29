@@ -1,8 +1,18 @@
 body {
-    background-color: whitesmoke;
+    background-color: dodgerblue;
     margin: 6rem 0 0 0;
     height: 77rem;
   }
+
+  h1 {
+    display: inline-block;
+  }
+
+  h2 {
+    margin: 0;
+    padding: 0;
+  }
+
   .nav {
     position: fixed;
     border-bottom: 1px solid black;
@@ -11,7 +21,6 @@ body {
     background-color: white;
   }
   .nav-header {
-    max-width: 75%;
     margin: 0 auto;
     display: flex;
     padding: 15px;
@@ -29,12 +38,16 @@ body {
   .nav-right {
     width: 60%;
     text-align: right; 
+    display: flex;
+    justify-content: flex-end;
   }
   .nav-link {
     text-decoration: none;
     margin-left: 3%;
     text-transform: uppercase;
     color: black;
+    margin: 0px;
+    padding: 5px;
   }
   .nav-link:hover {
     color: dodgerblue;
@@ -113,7 +126,7 @@ body {
     .hamburger-menu {
       display: block;
     }
-    .nav-right > a {
+    .nav-right > p, a {
       display: none;
     }
   }
