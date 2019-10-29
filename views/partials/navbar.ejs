@@ -7,10 +7,14 @@
 </div>
 <div class="nav-center"></div>
     <div class="nav-right">
-    <a href="/authors" class="nav-link">About</a>
-    <a href="/articles" class="nav-link">Shop</a>
-    <a href="" class="nav-link">Art Cart</a>
-    <a href="/login" class="nav-link">Login/Register</a>
+    <a href="/" class="nav-link">About</a>
+    <a href="/" class="nav-link">Shop</a>
+    <a href="/" class="nav-link">Art Cart</a>
+    <% if(username) { %> 
+        Hello <%= username %>
+    <% } else {  %> 
+        <a href="/auth/login" class="nav-link">Login/Register</a>
+    <% } %>
     <div class="hamburger-menu">
         <div class="bar"></div>
         <div class="bar"></div>
