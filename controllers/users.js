@@ -21,6 +21,14 @@ router.get('/register', (req, res) => {
     })
 });
 
+router.get('/artcart', (req,res) => {
+    res.render('users/artcart.ejs', {
+        message: req.session.message,
+        isLogged: req.session.logged,
+        photoUpload: req.session.upload,
+    })
+})
+
 router.post('/login', async (req,res) => {
     try {
         const foundUser = await User.findOne({username: req.body.username});
