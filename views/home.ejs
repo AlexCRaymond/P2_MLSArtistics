@@ -17,14 +17,19 @@
     <h1 id="shop">Shop</h1>
    
     <p>This is where you're shopping.</p>
-    <% for (let i = 0; i < photos.length; i++) {%>
+    <div class ="all-photos">
+        <% for (let i = 0; i < photos.length; i++) {%>
+            <div class="all-photos-sub">
         <div class="photos">
             <img src="<%=photos[i].photoUrl%>" alt="<%=photos[i].title%>"><br>
-            <em><%=photos[i].title%></em>
+            <em><%=photos[i].title%><br><%=photos[i].info%><br><%=photos[i].price%></em>
         </div>
             <form action="/photos/<%=photos[i]._id%>?_method=DELETE" method ="POST">
             <input type="submit" value = "Delete Photo">
             </form>
+        </div>
     <% } %>
+        
+        </div>
 </body>
 </html>
