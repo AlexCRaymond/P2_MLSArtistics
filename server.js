@@ -25,7 +25,7 @@ const photosController = require('./controllers/photos');
 app.use('/photos', photosController);
 
 const usersController = require('./controllers/users');
-app.use('/auth', usersController);
+app.use('/users', usersController);
 
 app.get('/', (req, res) => {
     res.render('home.ejs', {

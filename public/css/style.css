@@ -28,7 +28,7 @@ body {
   .nav-header {
     margin: 0 auto;
     display: flex;
-    padding: 15px;
+    /* padding: 15px; */
     align-items: center;
   }
   .nav-left {
