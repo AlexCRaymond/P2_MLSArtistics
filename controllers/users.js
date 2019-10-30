@@ -8,6 +8,7 @@ router.get('/login', (req, res) => {
     res.render('users/login.ejs', {
         message: req.session.message,
         isLogged: req.session.logged,
+        photoUpload: req.session.upload,
     })
 });
 
@@ -15,6 +16,8 @@ router.get('/register', (req, res) => {
     res.render('users/register.ejs', {
         message: req.session.message,
         isLogged: req.session.logged,
+        photoUpload: req.session.logged,
+
     })
 });
 
@@ -31,7 +34,9 @@ router.post('/login', async (req,res) => {
             } else {
                 res.render('users/login.ejs', {
                     message: 'Whoops! Username or password is incorrect.',
-                    isLogged: req.session.logged
+                    isLogged: req.session.logged,
+                    photoUpload: req.session.logged,
+
                 }) 
             }
         } else {

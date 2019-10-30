@@ -3,6 +3,8 @@ const app = express();
 const methodOverride = require('method-override');
 const bodyParser = require('body-parser');
 const session = require('express-session');
+const Photo = require ('./models/photos.js')
+
 
 require('./db/db');
 
@@ -27,10 +29,16 @@ app.use('/photos', photosController);
 const usersController = require('./controllers/users');
 app.use('/users', usersController);
 
-app.get('/', (req, res) => {
+app.get('/', async (req, res) => {
+    const getPhotos = await Photo.find({})
+    console.log(getPhotos, 'this is photos')
+
     res.render('home.ejs', {
         isLogged: req.session.logged,
-        isAdmin: req.session.isAdmin
+        isAdmin: req.session.isAdmin,
+        photos: getPhotos
+        // photoUpload: req.session.logged,
+
     })
 });
 
