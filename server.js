@@ -34,16 +34,6 @@ app.get('/', (req, res) => {
     })
 });
 
-app.get('/register', (req, res) => {
-    res.render('users/register.ejs')
-});
-
-app.get('/',(req, res) => {
-    res.render('/.ejs', {
-    logOut: req.session.logOutMsg 
-    });
-});
-
 app.listen(3000, () => {
     console.log('listening');
 });

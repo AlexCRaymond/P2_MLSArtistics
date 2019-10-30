@@ -4,8 +4,14 @@ const User = require ('../models/users.js')
 const bcrypt = require('bcryptjs');
 
 router.get('/login', (req, res) => {
-    console.log(req.session.logged)
     res.render('users/login.ejs', {
+        message: req.session.message,
+        isLogged: req.session.logged,
+    })
+});
+
+router.get('/register', (req, res) => {
+    res.render('users/register.ejs', {
         message: req.session.message,
         isLogged: req.session.logged,
     })
@@ -23,13 +29,13 @@ router.post('/login', async (req,res) => {
 
             } else {
                 res.render('users/login.ejs', {
-                    message: 'Whoops! Username or password is incorrect.'
+                    message: 'Whoops! Username or password is incorrect.',
+                    isLogged: req.session.logged
                 }) 
             }
         } else {
             res.render('users/login.ejs', {
             message: 'Whoops! Username or password is incorrect.'
-
             })
         }
     }
@@ -51,6 +57,7 @@ router.post('/register', async (req, res) => {
     const createdUser = await User.create(userDbEntry);
     req.session.username = createdUser.username;
     req.session.logged = true;
+    
 
     res.redirect('/')
 });
@@ -65,6 +72,5 @@ router.get('/logout', (req, res) => {
         }
     });
 });
-
 
 module.exports = router;

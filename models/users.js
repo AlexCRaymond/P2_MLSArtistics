@@ -5,8 +5,8 @@ const userSchema = new mongoose.Schema({
     username: {type: String},
     email: {type: String},
     photos:[{type:mongoose.Schema.Types.ObjectId, ref:'Photo'}],
-    password: {type: String, required: true}
-    // artCart: 
+    password: {type: String, required: true},
+    artCart: [{String}],
 });
 
 

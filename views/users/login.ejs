@@ -7,8 +7,8 @@
     <title>Document</title>
 </head>
 <body>
-        <%- include('../partials/navbar.ejs', {isLogged}) %>
-        <%= message %>
+    <%- include('../partials/navbar.ejs', {isLogged}) %>
+    <%= message %>
     
         <h4>Login</h4>
         <form action="/auth/login" method="POST">
@@ -17,6 +17,6 @@
           <input type="password" name="password" placeholder="password"><br>
           <button type="submit">Login</button>
         </form>
-        <a href="/register">Need to register?</a>
+        <a href="/auth/register">Need to register?</a>
 </body>
 </html>
