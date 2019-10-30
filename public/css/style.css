@@ -20,6 +20,11 @@ body {
     top: 0;
     background-color: white;
   }
+
+  /* .nav.scrolled {
+    background-color: white;
+  } */
+
   .nav-header {
     margin: 0 auto;
     display: flex;

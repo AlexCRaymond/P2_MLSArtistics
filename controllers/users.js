@@ -4,8 +4,10 @@ const User = require ('../models/users.js')
 const bcrypt = require('bcryptjs');
 
 router.get('/login', (req, res) => {
+    console.log(req.session.logged)
     res.render('users/login.ejs', {
-        message: req.session.message
+        message: req.session.message,
+        isLogged: req.session.logged,
     })
 });
 
@@ -16,6 +18,7 @@ router.post('/login', async (req,res) => {
             if(bcrypt.compareSync(req.body.password, foundUser.password)) {
                 req.session.username = foundUser.username;
                 req.session.logged = true;
+                req.session.isAdmin = foundUser.isAdmin
                 res.redirect('/')
 
             } else {

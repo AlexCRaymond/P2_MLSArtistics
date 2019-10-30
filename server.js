@@ -17,7 +17,6 @@ app.use((req, res, next) => {
     next()
 })
 
-
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(methodOverride('_method'));
 app.use(express.static('public'));
@@ -29,7 +28,10 @@ const usersController = require('./controllers/users');
 app.use('/auth', usersController);
 
 app.get('/', (req, res) => {
-    res.render('home.ejs')
+    res.render('home.ejs', {
+        isLogged: req.session.logged,
+        isAdmin: req.session.isAdmin
+    })
 });
 
 app.get('/register', (req, res) => {
