@@ -5,7 +5,6 @@ const bodyParser = require('body-parser');
 const session = require('express-session');
 const Photo = require ('./models/photos.js')
 
-
 require('./db/db');
 
 app.use(session({

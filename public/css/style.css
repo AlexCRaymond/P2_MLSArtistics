@@ -135,3 +135,13 @@ body {
       display: none;
     }
   }
+
+  .photos {
+    max-width: 300px;
+  }
+
+  img {
+    max-width: 500px;
+  }
+
+  

@@ -12,9 +12,10 @@ router.get('/upload', (req, res) => {
 
 router.post('/', async (req,res)=>{
     try {
-        const photo = await Photo.create(req.body)
+        const photos = await Photo.create(req.body)
         res.redirect('/')
     } catch(err) {
+        console.log(err)
     }
 });
 
