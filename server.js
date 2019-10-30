@@ -37,7 +37,6 @@ app.get('/', async (req, res) => {
         isLogged: req.session.logged,
         isAdmin: req.session.isAdmin,
         photos: getPhotos
-        // photoUpload: req.session.logged,
 
     })
 });

@@ -18,24 +18,6 @@ router.post('/', async (req,res)=>{
         console.log(err, 'this is error')
     }
 
-    //     if(err) {,(err,createdUser)=>{
-          
-    //     } else {
-    //         User.findById(req.body.userId, (err,foundUser)=>{
-    //             if(err) {
-    //             } else {
-    //                 foundUser.photos.push(createdUser);
-    //                 foundUser.save((err,saved)=>{
-    //                     if(err) {
-    //                         console.log(err)
-    //                     } else {
-    //                     res.redirect('/');
-    //                     }
-    //                 });
-    //             }
-    //         });
-    //     }
-    // });
 });
 
 
