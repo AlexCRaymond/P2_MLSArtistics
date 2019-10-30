@@ -1,7 +1,7 @@
 body {
     background-color: dodgerblue;
     margin: 6rem 0 0 0;
-    height: 77rem;
+    /* height: 77rem; */
   }
 
   h1 {
@@ -136,12 +136,22 @@ body {
   }
 
   img {
-    max-width: 500px;
+    width: 300px;
+    height: 200px
   }
 
   .all-photos {
     display: flex;
-    justify-content: space-around;
+    overflow: hidden;
+  }
+  
+  .all-photos:hover {
+    overflow: scroll;
+
+}
+
+  .all-photos-sub{
+  padding: 10px;
 }
   
 
