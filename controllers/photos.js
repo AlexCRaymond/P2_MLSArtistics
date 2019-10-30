@@ -15,9 +15,16 @@ router.post('/', async (req,res)=>{
         const photo = await Photo.create(req.body)
         res.redirect('/')
     } catch(err) {
-        console.log(err, 'this is error')
     }
+});
 
+router.delete('/:id', async (req,res) => {
+    try {
+        const deletePhoto = await Photo.findByIdAndRemove(req.params.id)
+        res.redirect('/')
+    } catch(err) {
+        console.log(err, 'this is delete error')
+    }
 });
 
 

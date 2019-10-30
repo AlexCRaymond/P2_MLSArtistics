@@ -41,7 +41,8 @@ router.post('/login', async (req,res) => {
             }
         } else {
             res.render('users/login.ejs', {
-            message: 'Whoops! Username or password is incorrect.'
+            message: 'Whoops! Username or password is incorrect.',
+            isLogged: req.session.logged,
             })
         }
     }
@@ -64,7 +65,6 @@ router.post('/register', async (req, res) => {
     req.session.username = createdUser.username;
     req.session.logged = true;
     
-
     res.redirect('/')
 });
 

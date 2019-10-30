@@ -18,7 +18,13 @@
    
     <p>This is where you're shopping.</p>
     <% for (let i = 0; i < photos.length; i++) {%>
-        <img src="<%=photos[i].photoUrl%>" />
+        <div>
+            <img src="<%=photos[i].photoUrl%>" alt="<%=photos.title%>"><br>
+            <em><%=photos.title%></em>
+            <form action="/photos/<%=photos[i]._id%>?_method=DELETE" method ="POST">
+            <input type="submit" value = "Delete Photo">
+            </form>
+        </div>
     <% } %>
 </body>
 </html>

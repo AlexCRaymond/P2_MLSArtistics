@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const connectionString = 'mongodb://localhost/mlsss';
+const connectionString = 'mongodb://localhost/mlssss';
 
 mongoose.connect(connectionString, { useNewUrlParser: true,
     useUnifiedTopology: true,
