@@ -11,11 +11,11 @@
             isLogged: isLogged
         }) %>
         <h1> Art Cart!</h1>
+        <form action="/users/artcart" method="POST"></form>
         <img src="<%= foundUser.artCart[0].photoUrl%>"><br>
         <%= foundUser.artCart[0].title %><br>
         <%= foundUser.artCart[0].info %><br>
         <%= foundUser.artCart[0].price %><br>
-
-        <form action="/users/artcart" method="POST"></form>
+        
 </body>
 </html>
