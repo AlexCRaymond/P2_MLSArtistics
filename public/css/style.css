@@ -16,6 +16,10 @@ body {
       text-shadow: 0 1px 1px #fff; 
   }
 
+  .home-art {
+    display: flex;
+  }
+
   .h1-text {
    color: black;
   }
@@ -29,11 +33,15 @@ body {
     font-family: "Great Vibes", cursive; 
   }
 
+  .about-image {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+  }
+
   .about-text {
-    width: 55%;
     font-family: 'Knewave', cursive;
     font-size: 20px;
-
   }
 
   .nav {
