@@ -21,13 +21,32 @@ router.get('/register', (req, res) => {
     })
 });
 
-router.get('/artcart', (req,res) => {
+router.get('/artcart/:id', async (req,res) => {
+    const foundUser = await User.findById(req.params.id).populate('artCart')
+    console.log(foundUser)
     res.render('users/artcart.ejs', {
         message: req.session.message,
         isLogged: req.session.logged,
         photoUpload: req.session.upload,
+        foundUser
     })
 })
+
+router.post('/artcart/:id', async (req, res)=>{
+    try{
+        const foundPhoto = await Photo.findById(req.params.id)
+        const foundUser = await User.findById(req.session.userId)
+        foundUser.artCart.push(foundPhoto)
+        await foundUser.save()
+        console.log(foundUser)
+            // addToCart.users.push(addToCart);
+            // addToCart.save()
+        res.redirect('/')
+    }catch(err){
+        console.log(err)
+    }
+});
+
 
 router.post('/login', async (req,res) => {
     try {
@@ -37,6 +56,7 @@ router.post('/login', async (req,res) => {
                 req.session.username = foundUser.username;
                 req.session.logged = true;
                 req.session.isAdmin = foundUser.isAdmin
+                req.session.userId = foundUser._id
                 res.redirect('/')
 
             } else {
@@ -72,6 +92,7 @@ router.post('/register', async (req, res) => {
     const createdUser = await User.create(userDbEntry);
     req.session.username = createdUser.username;
     req.session.logged = true;
+    req.session.userId = createdUser._id
     
     res.redirect('/')
 });

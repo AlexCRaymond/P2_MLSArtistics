@@ -24,12 +24,16 @@
             <img src="<%=photos[i].photoUrl%>" alt="<%=photos[i].title%>"><br>
             <em><%=photos[i].title%><br><%=photos[i].info%><br><%=photos[i].price%></em>
         </div>
-            <form action="/photos/<%=photos[i]._id%>?_method=DELETE" method ="POST">
-            <input type="submit" value = "Delete Photo">
-            </form>
+            <% if(username) { %> 
+                <form action="/photos/<%=photos[i]._id%>?_method=DELETE" method ="POST">
+                <input type="submit" value = "Delete Photo"> 
+                </form>
+                <form action="/users/artcart/<%=photos[i]._id%>" method="POST">
+                <input type="submit" value="Add To ArtCart">
+                </form>   
+            <% } %>
         </div>
     <% } %>
-        
         </div>
 </body>
 </html>

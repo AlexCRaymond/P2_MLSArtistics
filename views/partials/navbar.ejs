@@ -10,7 +10,9 @@
         <p class="nav-link" id="about">About</p>
         <p class="nav-link" id="shopLink">Shop</p>
         <a href="photos/upload" class="nav-link" id="upload">Upload</a>
-        <a href="users/artcart" class="nav-link" id="artCart">Art Cart</a>
+        <% if(userId) { %> 
+            <a href="users/artcart/<%=userId %>" class="nav-link" id="artCart">Art Cart</a>
+        <% } %>
     <% if(username) { %> 
         Hello <%= username %>
     <% } else {  %> 
@@ -54,3 +56,35 @@
     });
 </script>
   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- const foundBartender = await Bartender.findById(req.session.userId || "5db865585a923c0d6fe4b50a") -->

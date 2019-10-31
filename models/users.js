@@ -4,9 +4,9 @@ const userSchema = new mongoose.Schema({
     isAdmin: {type: Boolean, default: false},
     username: {type: String},
     email: {type: String},
-    photos:[{type:mongoose.Schema.Types.ObjectId, ref:'photos'}],
+    // photos:[{type:mongoose.Schema.Types.ObjectId, ref:'photos'}],
     password: {type: String, required: true},
-    artCart: [{String}],
+    artCart: [{type:mongoose.Schema.Types.ObjectId, ref:'Photo'}],
 });
 
 
