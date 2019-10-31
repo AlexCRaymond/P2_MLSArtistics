@@ -10,8 +10,12 @@
         <%- include('../partials/navbar.ejs', {
             isLogged: isLogged
         }) %>
-        <h1>Art Cart!</h1>
-        <%= foundUser.artCart[0].price %>
+        <h1> Art Cart!</h1>
+        <img src="<%= foundUser.artCart[0].photoUrl%>"><br>
+        <%= foundUser.artCart[0].title %><br>
+        <%= foundUser.artCart[0].info %><br>
+        <%= foundUser.artCart[0].price %><br>
+
         <form action="/users/artcart" method="POST"></form>
 </body>
 </html>
