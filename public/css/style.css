@@ -1,15 +1,39 @@
 body {
     background-color: dodgerblue;
     margin: 6rem 0 0 0;
+    background: linear-gradient(110deg, #fdcd3b 60%, #ffed4b 60%);
   }
 
   h1 {
-    display: inline-block;
+       
+      font-family: "Great Vibes", cursive; 
+      font-size: 165px; 
+      line-height: 160px; 
+      font-weight: normal; 
+      margin-bottom: 0px;
+      margin-top: 40px; 
+      text-align: center; 
+      text-shadow: 0 1px 1px #fff; 
+  }
+
+  .h1-text {
+   color: black;
   }
 
   h2 {
     margin: 0;
     padding: 0;
+  }
+
+  .h2-text {
+    font-family: "Great Vibes", cursive; 
+  }
+
+  .about-text {
+    width: 55%;
+    font-family: 'Knewave', cursive;
+    font-size: 20px;
+
   }
 
   .nav {
