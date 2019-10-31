@@ -24,8 +24,6 @@
         </div>
     </div>
     <h1 id="shop">Shop</h1>
-   
-    <p>This is where you're shopping.</p>
     <div class ="all-photos">
         <% for (let i = 0; i < photos.length; i++) {%>
             <div class="all-photos-sub">
@@ -35,7 +33,7 @@
         </div>
             <% if(username) { %>
                 <% if (isAdmin) { %> 
-                <form action="/photos/<%=photos[i]._id%>?_method=DELETE" method ="POST">
+                <form action="/users/artcart/<%=photos[i]._id%>?_method=DELETE" method ="POST">
                 <input type="submit" value = "Delete Photo"> 
                 </form>
                 <% } %>

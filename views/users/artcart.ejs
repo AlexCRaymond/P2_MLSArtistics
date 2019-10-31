@@ -8,14 +8,25 @@
 </head>
 <body>
         <%- include('../partials/navbar.ejs', {
-            isLogged: isLogged
+            isLogged: isLogged,
+            isAdmin: isAdmin
         }) %>
         <h1> Art Cart!</h1>
         <form action="/users/artcart" method="POST"></form>
-        <img src="<%= foundUser.artCart[0].photoUrl%>"><br>
-        <%= foundUser.artCart[0].title %><br>
-        <%= foundUser.artCart[0].info %><br>
-        <%= foundUser.artCart[0].price %><br>
+        <% foundUser.artCart.forEach(art => { %>
+            <div>
+                <img src="<%= art.photoUrl %>"/>
+                <div><%= art.title %></div>
+                <div><%= art.info %></div>
+                <div><%= art.price %></div>
+            </div>
+            <% if (isAdmin) { %> 
+            <form action="/users/artcart/<%=art._id%>/delete?_method=DELETE" method ="POST">
+                <input type="submit" value = "Delete Photo"> 
+                </form>
+                <% } %>
+        <% }) %>
+        
         
 </body>
 </html>

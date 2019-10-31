@@ -20,14 +20,9 @@ router.post('/', async (req,res)=>{
     }
 });
 
-router.delete('/:id', async (req,res) => {
-    try {
-        const deletePhoto = await Photo.findByIdAndRemove(req.params.id)
-        res.redirect('/')
-    } catch(err) {
-        console.log(err, 'this is delete error')
-    }
-});
+
+
+
 
 
 

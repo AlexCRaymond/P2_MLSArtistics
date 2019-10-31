@@ -40,15 +40,11 @@ router.post('/artcart/:id', async (req, res)=>{
         const foundUser = await User.findById(req.session.userId)
         foundUser.artCart.push(foundPhoto)
         await foundUser.save()
-        console.log(foundUser)
-            // addToCart.users.push(addToCart);
-            // addToCart.save()
         res.redirect('/')
     }catch(err){
         console.log(err)
     }
 });
-
 
 router.post('/login', async (req,res) => {
     try {
@@ -66,7 +62,6 @@ router.post('/login', async (req,res) => {
                     message: 'Whoops! Username or password is incorrect.',
                     isLogged: req.session.logged,
                     photoUpload: req.session.logged,
-
                 }) 
             }
         } else {
@@ -99,6 +94,18 @@ router.post('/register', async (req, res) => {
     res.redirect('/')
 });
 
+router.get('/:id/edit', (req, res) => {
+    Photo.findById(req.params.id, (err, foundPhoto) => {
+        if(err){
+            res.send(err);
+        } else {
+            res.render('photos/edit.ejs', {
+                photo: foundPhoto
+            });
+        }
+    });
+});
+
 router.get('/logout', (req, res) => {
 
     req.session.destroy((err) => {
@@ -109,5 +116,29 @@ router.get('/logout', (req, res) => {
         }
     });
 });
+
+router.delete('/artcart/:id/delete', async(req, res) => {
+    try {
+        console.log(req.session)
+        const foundUser = await User.findById(req.session.userId)
+        console.log(foundUser)
+        foundUser.artCart = foundUser.artCart.filter(art => art._id.toString() !== req.params.id)
+        await foundUser.save()
+        res.redirect('/')
+        
+    } catch(err) {
+        console.log(err)
+    }
+})
+
+router.delete('/artcart/:id', async (req,res) => {
+    try {
+        const deletePhoto = await Photo.findByIdAndRemove(req.params.id)
+        res.redirect('/')
+    } catch(err) {
+        console.log(err, 'this is delete error')
+    }
+});
+
 
 module.exports = router;

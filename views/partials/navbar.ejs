@@ -10,10 +10,10 @@
         <p class="nav-link" id="about">About</p>
         <p class="nav-link" id="shopLink">Shop</p>
         <% if(isAdmin) { %>
-            <a href="photos/upload" class="nav-link" id="upload">Upload</a>
+            <a href="/photos/upload" class="nav-link" id="upload">Upload</a>
         <% } %>
         <% if(userId) { %> 
-            <a href="users/artcart/<%=userId %>" class="nav-link" id="artCart">Art Cart</a>
+            <a href="/users/artcart/<%=userId %>" class="nav-link" id="artCart">Art Cart</a>
         <% } %>
     <% if(username) { %> 
         Hello <%= username %>
@@ -21,7 +21,7 @@
         <a href="/users/login" class="nav-link">Login/Register</a>
     <% } %>
     <% if(isLogged) { %>
-        <a href="users/logout">Log Out</a>
+        <a href="/users/logout">Log Out</a>
     <% } %>   
         
     <div class="hamburger-menu">
@@ -33,10 +33,9 @@
  </div>
  <div class="overlay">
      <div class="overlay-content">
-         <a href="#" class="overlay-link">About</a>
-         <a href="#" class="overlay-link">Shop</a>
-         <a href="#" class="overlay-link">Art Cart</a>
-         <a href="#" class="overlay-link">Login/Register</a>
+         <a href="/" class="overlay-link">Home</a>
+         <a href="/users/artcart/<%=userId %>" class="overlay-link">Art Cart</a>
+         <a href="/users/login" class="overlay-link">Login/Register</a>
      </div>
  </div>
 </div>
