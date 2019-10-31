@@ -7,6 +7,7 @@ router.get('/upload', (req, res) => {
     res.render('photos/upload.ejs', {
         isLogged: req.session.logged,
         photoUpload: req.session.logged,
+        isAdmin: req.session.isAdmin
     })
 });
 

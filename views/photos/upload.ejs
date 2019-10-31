@@ -7,7 +7,10 @@
     <title>Document</title>
 </head>
 <body>
-        <%- include('../partials/navbar.ejs', {isLogged}) %>
+        <%- include('../partials/navbar.ejs', {
+            isLogged: isLogged,
+            isAdmin: isAdmin
+           }) %>
         <h1>Upload A Photo</h1>
         <form action="/photos" method="POST">
            

@@ -9,7 +9,9 @@
     <div class="nav-right">
         <p class="nav-link" id="about">About</p>
         <p class="nav-link" id="shopLink">Shop</p>
-        <a href="photos/upload" class="nav-link" id="upload">Upload</a>
+        <% if(isAdmin) { %>
+            <a href="photos/upload" class="nav-link" id="upload">Upload</a>
+        <% } %>
         <% if(userId) { %> 
             <a href="users/artcart/<%=userId %>" class="nav-link" id="artCart">Art Cart</a>
         <% } %>

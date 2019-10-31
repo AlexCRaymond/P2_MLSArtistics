@@ -9,6 +9,7 @@ router.get('/login', (req, res) => {
         message: req.session.message,
         isLogged: req.session.logged,
         photoUpload: req.session.upload,
+        isAdmin: req.session.isAdmin
     })
 });
 
@@ -17,7 +18,8 @@ router.get('/register', (req, res) => {
         message: req.session.message,
         isLogged: req.session.logged,
         photoUpload: req.session.logged,
-
+        isAdmin: req.session.isAdmin
+        
     })
 });
 
@@ -55,7 +57,7 @@ router.post('/login', async (req,res) => {
             if(bcrypt.compareSync(req.body.password, foundUser.password)) {
                 req.session.username = foundUser.username;
                 req.session.logged = true;
-                // req.session.isAdmin = foundUser.isAdmin
+                req.session.isAdmin = foundUser.isAdmin
                 req.session.userId = foundUser._id
                 res.redirect('/')
 
