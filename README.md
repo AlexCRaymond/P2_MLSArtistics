@@ -22,14 +22,15 @@
 ## Models:
 
 * Two models will be used:
-	-User model:
+
+*-User model:
 		-admin (for Mikel)
 		-username
 		-email
 		-password
 		-art cart (checkout - redirect to functioning website)
 
-	-Art model:
+*-Art model:
 		-title
 		-information (size of canvas, painting style, date of creation)
 		-price
