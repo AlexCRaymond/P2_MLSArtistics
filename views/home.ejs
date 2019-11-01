@@ -17,7 +17,7 @@
     <div class="home-art">
         <div class="h2-text">
             <h2>Est. 2015</h2>
-        <p class="about-text">In a few short years of experimenting with acrylic paint, I've already created hundreds original works of art! Everything from canvases, to coasters, household accessories, and many more. Specializing in bizarre and fascinating abstract artwork, I'm looking to help you find unique and beautiful pieces for your home or workplace. I have work featured on Society6, Redbubble, Facebook, Instagram, and more with work sold Nation-wide. Don't see what you like, no worries.  I do commissions as well!* </p>
+        <p class="about-text">My name is Mike Stevenson and I'm an artist living in Colorado Springs, Colorado. In a few short years of experimenting with acrylic paint, I've already created hundreds original works of art! Everything from canvases, to coasters, household accessories, and many more. Specializing in bizarre and fascinating abstract artwork, I'm looking to help you find unique and beautiful pieces for your home or workplace. I have work featured on Society6, Redbubble, Facebook, Instagram, and more with work sold Nation-wide. Don't see what you like, no worries.  I do commissions as well! </p>
         </div>
         <div class="about-image">
             <img src="https://i.imgur.com/Nfae9D4.jpg">
@@ -36,6 +36,9 @@
                 <form action="/users/artcart/<%=photos[i]._id%>?_method=DELETE" method ="POST">
                 <input type="submit" value = "Delete Photo"> 
                 </form>
+                <!-- <form method="POST" action="/users/edit/<%=photos[i]._id%>?_method=PUT">
+                <input type="submit" value="Edit Photo">
+                </form> -->
                 <% } %>
                 <form action="/users/artcart/<%=photos[i]._id%>" method="POST">
                 <input type="submit" value="Add To ArtCart">

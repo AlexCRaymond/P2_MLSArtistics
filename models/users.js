@@ -8,6 +8,5 @@ const userSchema = new mongoose.Schema({
     artCart: [{type:mongoose.Schema.Types.ObjectId, ref:'Photo'}],
 });
 
-
 const User = mongoose.model('User', userSchema)
 module.exports = User;

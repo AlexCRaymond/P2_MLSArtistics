@@ -97,9 +97,10 @@ router.post('/register', async (req, res) => {
 router.get('/:id/edit', (req, res) => {
     Photo.findById(req.params.id, (err, foundPhoto) => {
         if(err){
+            console.log(err)
             res.send(err);
         } else {
-            res.render('photos/edit.ejs', {
+            res.render('users/edit.ejs', {
                 photo: foundPhoto
             });
         }

@@ -20,11 +20,11 @@
                 <div><%= art.info %></div>
                 <div><%= art.price %></div>
             </div>
-            <% if (isAdmin) { %> 
+           
             <form action="/users/artcart/<%=art._id%>/delete?_method=DELETE" method ="POST">
                 <input type="submit" value = "Delete Photo"> 
                 </form>
-                <% } %>
+                <input type="button" value="Check-Out!" onclick="window.open('http://www.mlsartistics.com/')">
         <% }) %>
         
         
