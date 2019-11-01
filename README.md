@@ -24,7 +24,7 @@
 * Two models will be used:
 
 * User model:
-		-admin (for Mikel)
+		-admin (for Mike)
 		-username
 		-email
 		-password
