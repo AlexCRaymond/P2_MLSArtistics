@@ -5,7 +5,10 @@ const bodyParser = require('body-parser');
 const session = require('express-session');
 const Photo = require ('./models/photos.js')
 
+require('dotenv').config()
 require('./db/db');
+
+const PORT = process.env.PORT
 
 app.use(session({
     secret: "this is a random secret string",
@@ -43,6 +46,6 @@ app.get('/', async (req, res) => {
     })
 });
 
-app.listen(3000, () => {
-    console.log('listening');
+app.listen(PORT, () => {
+    console.log(`running on port ${PORT}`);
 });

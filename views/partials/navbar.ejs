@@ -14,14 +14,14 @@
         <% if(userId) { %> 
             <a href="/users/artcart/<%=userId %>" class="nav-link" id="artCart">Art Cart</a>
         <% } %>
-    <% if(username) { %> 
-        Hello <%= username %>
-    <% } else {  %> 
-        <a href="/users/login" class="nav-link">Login/Register</a>
-    <% } %>
-    <% if(isLogged) { %>
-        <a href="/users/logout">Log Out</a>
-    <% } %>   
+        <% if(username) { %> 
+            Hello <%= username %>
+        <% } else {  %> 
+            <a href="/users/login" class="nav-link">Login/Register</a>
+        <% } %>
+        <% if(isLogged) { %>
+            <a href="/users/logout">Log Out</a>
+        <% } %>   
         
     <div class="hamburger-menu">
         <div class="bar"></div>

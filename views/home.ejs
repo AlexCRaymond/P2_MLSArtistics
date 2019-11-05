@@ -25,7 +25,7 @@
     </div>
     <h1 id="shop">Shop</h1>
     <div class ="all-photos">
-        <% for (let i = 0; i < photos.length; i++) {%>
+        <% for (let i = 0; i < photos.length; i++) { %>
             <div class="all-photos-sub">
         <div class="photos">
             <img src="<%=photos[i].photoUrl%>" alt="<%=photos[i].title%>"><br>
@@ -36,9 +36,6 @@
                 <form action="/users/artcart/<%=photos[i]._id%>?_method=DELETE" method ="POST">
                 <input type="submit" value = "Delete Photo"> 
                 </form>
-                <!-- <form method="POST" action="/users/edit/<%=photos[i]._id%>?_method=PUT">
-                <input type="submit" value="Edit Photo">
-                </form> -->
                 <% } %>
                 <form action="/users/artcart/<%=photos[i]._id%>" method="POST">
                 <input type="submit" value="Add To ArtCart">
