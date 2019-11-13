@@ -21,6 +21,10 @@ app.use((req, res, next) => {
     res.locals.username = req.session.username || null
     res.locals.userId = req.session.userId 
     res.locals.isAdmin = req.session.isAdmin || null
+//     res.locals.message: req.session.message,
+//     res.locals.isLogged: req.session.logged,
+//     res.locals.photoUpload: req.session.upload,
+//     res.locals.isAdmin: req.session.isAdmin
     next()
 });
 
