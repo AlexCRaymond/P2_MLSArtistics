@@ -1,6 +1,6 @@
 # ## MLSArtistics - By Alex Raymond 
 
-## Link to [MLSArtistics](https://mlsartistics.herokuapp.com/) - 
+## Link to [MLSArtistics](https://mlsartistics.herokuapp.com/)
 
 ## MLSArtistics
 
