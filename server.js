@@ -36,8 +36,7 @@ app.use('/users', usersController);
 
 app.get('/', async (req, res) => {
     const getPhotos = await Photo.find({})
-    console.log(getPhotos, 'this is photos')
-
+//     console.log(getPhotos, 'this is photos')
     res.render('home.ejs', {
         isLogged: req.session.logged,
         isAdmin: req.session.isAdmin,
