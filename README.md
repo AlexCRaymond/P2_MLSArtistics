@@ -17,6 +17,7 @@
 * CSS
 * Javascript
 * jQuery
+* Mongoose
 
 
 ## Models:
@@ -24,7 +25,7 @@
 * Two models will be used:
 
 * User model:
-		-admin (for Mike)
+		-admin 
 		-username
 		-email
 		-password
